@@ -1,0 +1,461 @@
+/* ================================
+   MOVIE DETAILS PAGE
+================================ */
+
+.movie-details-page {
+    min-height: 100vh;
+    padding: 60px 7%;
+    background:
+        radial-gradient(circle at 20% 20%, #252536 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #1b2638 0%, transparent 30%),
+        #08090d;
+
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   DETAILS CONTAINER
+================================ */
+
+.movie-details-card {
+    position: relative;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 360px 1fr;
+
+    gap: 55px;
+
+    padding: 40px;
+
+    background: rgba(25, 26, 34, 0.92);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* ================================
+   POSTER
+================================ */
+
+.movie-details-poster {
+    position: relative;
+}
+
+.movie-details-poster::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    bottom: -20px;
+
+    height: 40px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    filter: blur(20px);
+
+    z-index: 0;
+}
+
+.movie-details-poster img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.6);
+
+    transition: transform 0.4s ease;
+}
+
+.movie-details-poster img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.movie-details-content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* TITLE */
+
+.movie-details-content h1 {
+    margin: 0;
+
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #b9bcc8
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ================================
+   BASIC INFORMATION
+================================ */
+
+.movie-basic-info {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+    color: #a8aab5;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* ================================
+   RATING
+================================ */
+
+.imdb-rating {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 193, 7, 0.1);
+
+    border: 1px solid rgba(255, 193, 7, 0.25);
+
+    color: #ffd43b;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.imdb-rating span {
+    color: #a8aab5;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+/* ================================
+   PLOT
+================================ */
+
+.movie-plot {
+    margin-top: 25px;
+
+    max-width: 750px;
+
+    color: #c5c7d0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* ================================
+   MOVIE INFORMATION
+================================ */
+
+.details-list {
+    margin-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding-top: 12px;
+}
+
+.details-list div {
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 20px;
+
+    padding: 10px 0;
+}
+
+.details-list strong {
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.details-list span {
+    color: #aeb0bb;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    margin-top: 28px;
+
+    padding: 12px 22px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111318;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+
+    background: #e9e9eb;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   LOADING / ERROR
+================================ */
+
+.details-message {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    background: #08090d;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.details-message h2 {
+    font-size: 24px;
+
+    color: #d5d6dd;
+}
+
+.details-message a {
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #111318;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .movie-details-page {
+        padding: 40px 4%;
+    }
+
+    .movie-details-card {
+        grid-template-columns: 280px 1fr;
+
+        gap: 35px;
+
+        padding: 30px;
+    }
+
+    .movie-details-poster img {
+        height: 420px;
+    }
+
+    .movie-details-content h1 {
+        font-size: 36px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+    .movie-details-page {
+        padding: 25px 15px;
+    }
+
+    .movie-details-card {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    .movie-details-poster {
+        max-width: 300px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .movie-details-poster img {
+        height: 430px;
+    }
+
+    .movie-details-content h1 {
+        font-size: 30px;
+    }
+
+    .movie-plot {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .details-list div {
+        grid-template-columns: 1fr;
+
+        gap: 4px;
+    }
+
+    .back-button {
+        width: 100%;
+    }
+    /* =========================
+   YOUTUBE BUTTON
+========================= */
+
+.youtube-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    margin-top: 25px;
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    background: #ff0000;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.youtube-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 0, 0, 0.25);
+
+    background: #cc0000;
+}
+}
