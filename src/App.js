@@ -7,6 +7,7 @@ import SearchBar from "./component/searchbar/searchbar";
 import MovieList from "./component/searchbar/Moviecard/Movielist";
 import Footer from "./component/Footer";
 import MovieData from "./component/Moviedata";
+import Register from "./Register/register";
 
 import "./App.css";
 
@@ -28,6 +29,10 @@ const App = () => {
 
 
                 {/* MOVIES */}
+                <Route
+                   path="/register"
+                   element={<Register />}
+               />
 
                 <Route
                     path="/movies"
